@@ -1,7 +1,7 @@
 {
   "name": "mineflayer-chatgpt",
   "type": "module",
-  "description": "Mineflayer plugin for sending messages to OpenAI's ChatGPT",
+  "description": "Mineflayer plugin for sending a message to OpenAI's ChatGPT",
   "keywords": [
     "minecraft, mineflayer, chatgpt, chat, ai, openai"
   ],
