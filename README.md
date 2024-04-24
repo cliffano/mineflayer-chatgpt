@@ -43,4 +43,4 @@ Set the configuration:
 
 Send a message to ChatGPT:
 
-    bot.chatgpt.sendMessage('player', 'Hey buddy, how to make a Diamond sword in Minecraft?');
+    bot.chatgpt.sendMessage('player', 'Hello, could you please tell me how to make a diamond sword in Minecraft?');
