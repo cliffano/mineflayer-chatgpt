@@ -24,5 +24,5 @@
     [32m  [32m✔[39m[0m[90m should get parent message ID[0m
 
 
-[92m [0m[32m 11 passing[0m[90m (11ms)[0m
+[92m [0m[32m 11 passing[0m[90m (10ms)[0m
 
