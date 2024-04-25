@@ -1,0 +1,20 @@
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'mineflayer-chatgpt@0.9.0',
+npm WARN EBADENGINE   required: { node: '>= 18.0.0' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+
+added 151 packages, and audited 152 packages in 3s
+
+22 packages are looking for funding
+  run `npm fund` for details
+
+8 vulnerabilities (1 low, 7 moderate)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.

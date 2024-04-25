@@ -1,0 +1,39 @@
+test | /opt/hostedtoolcache/node/16.20.2/x64/lib/node_modules/bob/node_modules/.bin/mocha --colors --reporter spec --recursive test/
+
+[0m[0m
+[0m  action[0m
+[0m    respond to message[0m
+    [32m  [32m✔[39m[0m[90m should return a reply from chat completion message[0m
+    [32m  [32m✔[39m[0m[90m should register reference to memory[0m
+
+[0m  memory[0m
+[0m    check memory references[0m
+    [32m  [32m✔[39m[0m[90m should not return undefined when retrieving reference of an existing player[0m
+    [32m  [32m✔[39m[0m[90m should return undefined when retrieving reference of an inexisting player[0m
+    [32m  [32m✔[39m[0m[90m should return true when checking for an existing player[0m
+    [32m  [32m✔[39m[0m[90m should return false when checking for an inexisting player[0m
+
+[0m  mineflayer-chatgpt[0m
+[0m    chatgpt[0m
+    [32m  [32m✔[39m[0m[90m should add setConfig function[0m
+    [32m  [32m✔[39m[0m[90m should add sendMessage function[0m
+    [32m  [32m✔[39m[0m[90m should set opts when setConfig is called[0m
+
+[0m  reference[0m
+[0m    retrieve properties[0m
+    [32m  [32m✔[39m[0m[90m should get conversation ID[0m
+    [32m  [32m✔[39m[0m[90m should get parent message ID[0m
+
+
+[92m [0m[32m 11 passing[0m[90m (10ms)[0m
+
+SUCCESS | exit code 0
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |    91.4 |    93.33 |    90.9 |    91.4 |                   
+ action.js             |     100 |      100 |     100 |     100 |                   
+ memory.js             |     100 |      100 |     100 |     100 |                   
+ mineflayer-chatgpt.js |      75 |       75 |   66.66 |      75 | 23-33             
+ reference.js          |     100 |      100 |     100 |     100 |                   
+-----------------------|---------|----------|---------|---------|-------------------
