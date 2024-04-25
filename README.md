@@ -44,3 +44,16 @@ Set the configuration:
 Send a message to ChatGPT:
 
     bot.chatgpt.sendMessage('player', 'Hello, could you please tell me how to make a diamond sword in Minecraft?');
+
+Colophon
+--------
+
+[Developer's Guide](https://cliffano.github.io/developers_guide.html#nodejs)
+
+Build reports:
+
+* [Code complexity report](https://cliffano.github.io/mineflayer-chatgpt/complexity/plato/index.html)
+* [Unit tests report](https://cliffano.github.io/mineflayer-chatgpt/test/mocha.txt)
+* [Test coverage report](https://cliffano.github.io/mineflayer-chatgpt/coverage/c8/index.html)
+* [Integration tests report](https://cliffano.github.io/mineflayer-chatgpt/test-integration/cmdt.txt)
+* [API Documentation](https://cliffano.github.io/mineflayer-chatgpt/doc/jsdoc/index.html)
