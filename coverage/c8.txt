@@ -1,4 +1,4 @@
-test | /opt/hostedtoolcache/node/20.12.2/x64/lib/node_modules/bob/node_modules/.bin/mocha --colors --reporter spec --recursive test/
+test | /opt/hostedtoolcache/node/16.20.2/x64/lib/node_modules/bob/node_modules/.bin/mocha --colors --reporter spec --recursive test/
 
 [0m[0m
 [0m  action[0m
@@ -18,6 +18,9 @@ test | /opt/hostedtoolcache/node/20.12.2/x64/lib/node_modules/bob/node_modules/.
     [32m  [32m✔[39m[0m[90m should add setConfig function[0m
     [32m  [32m✔[39m[0m[90m should add sendMessage function[0m
     [32m  [32m✔[39m[0m[90m should set opts when setConfig is called[0m
+    [32m  [32m✔[39m[0m[90m should call bot chat when sendMessage is called without error[0m
+    [32m  [32m✔[39m[0m[90m should logged error message when it is a generic error[0m
+    [32m  [32m✔[39m[0m[90m should logged formatted error message when it is an OpenAI.APIError[0m
 
 [0m  reference[0m
 [0m    retrieve properties[0m
@@ -25,15 +28,15 @@ test | /opt/hostedtoolcache/node/20.12.2/x64/lib/node_modules/bob/node_modules/.
     [32m  [32m✔[39m[0m[90m should get parent message ID[0m
 
 
-[92m [0m[32m 11 passing[0m[90m (10ms)[0m
+[92m [0m[32m 14 passing[0m[90m (17ms)[0m
 
 SUCCESS | exit code 0
 -----------------------|---------|----------|---------|---------|-------------------
 File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------|---------|----------|---------|---------|-------------------
-All files              |    91.4 |    93.33 |    90.9 |    91.4 |                   
+All files              |     100 |    94.73 |     100 |     100 |                   
  action.js             |     100 |      100 |     100 |     100 |                   
  memory.js             |     100 |      100 |     100 |     100 |                   
- mineflayer-chatgpt.js |      75 |       75 |   66.66 |      75 | 23-33             
+ mineflayer-chatgpt.js |     100 |     87.5 |     100 |     100 | 18                
  reference.js          |     100 |      100 |     100 |     100 |                   
 -----------------------|---------|----------|---------|---------|-------------------

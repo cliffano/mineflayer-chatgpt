@@ -17,6 +17,9 @@
     [32m  [32m✔[39m[0m[90m should add setConfig function[0m
     [32m  [32m✔[39m[0m[90m should add sendMessage function[0m
     [32m  [32m✔[39m[0m[90m should set opts when setConfig is called[0m
+    [32m  [32m✔[39m[0m[90m should call bot chat when sendMessage is called without error[0m
+    [32m  [32m✔[39m[0m[90m should logged error message when it is a generic error[0m
+    [32m  [32m✔[39m[0m[90m should logged formatted error message when it is an OpenAI.APIError[0m
 
 [0m  reference[0m
 [0m    retrieve properties[0m
@@ -24,5 +27,5 @@
     [32m  [32m✔[39m[0m[90m should get parent message ID[0m
 
 
-[92m [0m[32m 11 passing[0m[90m (10ms)[0m
+[92m [0m[32m 14 passing[0m[90m (17ms)[0m
 
