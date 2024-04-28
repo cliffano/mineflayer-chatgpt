@@ -39,6 +39,10 @@ describe('mineflayer-chatgpt', function() {
       this.mockBot.chatgpt.setConfig('sk-123', opts);
       assert.equal(opts.model, 'gpt-3.5-turbo');
     });
+    it('should complete and set opts when setConfig is called with undefined opts', function() {
+      mineflayerChatgpt.chatgpt(this.mockBot);
+      this.mockBot.chatgpt.setConfig('sk-123');
+    });
     it('should call bot chat when sendMessage is called without error', async function() {
       this.mockAction.expects('respond').once().withArgs(sinon.match.any, sinon.match.any, 'someplayer', 'Hello').returns('Hi there!');
       mineflayerChatgpt.chatgpt(this.mockBot);
