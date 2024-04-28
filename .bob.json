@@ -1,5 +1,5 @@
 {
-  "build": "clean dep lint complexity test coverage doc",
+  "build": "clean dep lint complexity test coverage test-integration doc",
   "lint": {
     "type": "eslint"
   },
@@ -11,6 +11,9 @@
   },
   "coverage": {
     "type": "c8"
+  },
+  "test-integration": {
+    "type": "cmdt"
   },
   "doc": {
     "type": "jsdoc"
