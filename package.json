@@ -24,12 +24,12 @@
     "test": "./test"
   },
   "dependencies": {
-    "mineflayer": "^4.10.1",
-    "openai": "4.38.2"
+    "mineflayer": "^4.20.1",
+    "openai": "^4.38.5"
   },
   "devDependencies": {
-    "sinon": "^15.2.0",
-    "@sinonjs/referee": "^10.0.1"
+    "sinon": "^17.0.1",
+    "@sinonjs/referee": "^11.0.1"
   },
   "scripts": {},
   "engines": {
