@@ -2,6 +2,7 @@
 import assert from 'assert';
 import action from '../lib/action.js';
 import mineflayerChatgpt from '../lib/mineflayer-chatgpt.js';
+import OpenAI from 'openai';
 import sinon from 'sinon';
 
 describe('mineflayer-chatgpt', function() {
@@ -9,14 +10,18 @@ describe('mineflayer-chatgpt', function() {
   describe('chatgpt', function() {
     beforeEach(function () {
       this.mockAction = sinon.mock(action);
-      // this.mockChat = sinon.mock();
-      this.mockBot = { chat: {} };
       this.mockConsole = sinon.mock(console);
+
+      this.chatCallsCount = 0;
+      this.chatLastCallreply = null;
+      const self = this;
+      this.mockBot = { chat: function (reply) {
+        self.chatCallsCount += 1;
+        self.chatCallReply = reply;
+      }};
     });
     afterEach(function () {
       this.mockAction.verify();
-      // this.mockBot.verify();
-      // this.mockChat.verify();
       this.mockConsole.verify();
       sinon.restore();
     });
@@ -34,12 +39,28 @@ describe('mineflayer-chatgpt', function() {
       this.mockBot.chatgpt.setConfig('sk-123', opts);
       assert.equal(opts.model, 'gpt-3.5-turbo');
     });
-    // it('should call bot chat when sendMessage is called without error', function() {
-    //   this.mockChat.expects('chat').once().withExactArgs('Hi there!');
-    //   this.mockAction.expects('respond').once().withArgs('Hi there!');
-    //   mineflayerChatgpt.chatgpt(this.mockBot);
-    //   this.mockBot.chatgpt.sendMessage('someplayer', 'Hello');
-    // });
+    it('should call bot chat when sendMessage is called without error', async function() {
+      this.mockAction.expects('respond').once().withArgs(sinon.match.any, sinon.match.any, 'someplayer', 'Hello').returns('Hi there!');
+      mineflayerChatgpt.chatgpt(this.mockBot);
+      await this.mockBot.chatgpt.sendMessage('someplayer', 'Hello');
+      assert.equal(this.chatCallsCount, 1);
+      assert.equal(this.chatCallReply, 'Hi there!');
+    });
+    it('should logged error message when it is a generic error', async function() {
+      this.mockConsole.expects('error').once().withExactArgs('An unexpected error has occurred: some error');
+      this.mockAction.expects('respond').once().withArgs(sinon.match.any, sinon.match.any, 'someplayer', 'Hello').throws(new Error('some error'));
+      mineflayerChatgpt.chatgpt(this.mockBot);
+      await this.mockBot.chatgpt.sendMessage('someplayer', 'Hello');
+      assert.equal(this.chatCallsCount, 0);
+    });
+    it('should logged formatted error message when it is an OpenAI.APIError', async function() {
+      this.mockConsole.expects('error').once().withExactArgs('An OpenAI error has occurred: some openai error undefined undefined some openai error 400');
+      let openAiError = new OpenAI.APIError('some openai error', 400, 'some type', 'some code');
+      this.mockAction.expects('respond').once().withArgs(sinon.match.any, sinon.match.any, 'someplayer', 'Hello').throws(openAiError);
+      mineflayerChatgpt.chatgpt(this.mockBot);
+      await this.mockBot.chatgpt.sendMessage('someplayer', 'Hello');
+      assert.equal(this.chatCallsCount, 0);
+    });
   });
 
 });
