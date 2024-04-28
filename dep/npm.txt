@@ -1,12 +1,12 @@
 npm WARN EBADENGINE Unsupported engine {
 npm WARN EBADENGINE   package: 'mineflayer-chatgpt@0.9.0',
 npm WARN EBADENGINE   required: { node: '>= 18.0.0' },
-npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE   current: { node: 'v17.9.1', npm: '8.11.0' }
 npm WARN EBADENGINE }
 npm WARN EBADENGINE Unsupported engine {
 npm WARN EBADENGINE   package: 'mineflayer@4.20.1',
 npm WARN EBADENGINE   required: { node: '>=18' },
-npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE   current: { node: 'v17.9.1', npm: '8.11.0' }
 npm WARN EBADENGINE }
 
 added 157 packages, and audited 158 packages in 4s
