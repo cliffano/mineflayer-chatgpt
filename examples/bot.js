@@ -7,7 +7,7 @@ let hasSpawned = false;
 
 console.log('Initialising example bot...');
 const bot = mineflayer.createBot({
-  host: '172.17.0.12',
+  host: process.env.HOST,
   port: 25565,
   username: 'someplayer'
 });

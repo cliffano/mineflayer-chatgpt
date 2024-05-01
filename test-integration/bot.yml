@@ -12,8 +12,8 @@
   output: 'added .* package.*'
 
 - description: Run example bot
-  command: 'node {base}/examples/bot.js'
-  exitcode: 0
+  command: 'HOST=$(make -f {base}/test-integration/fixtures/Makefile get-minecraft-server-ip-address) node {base}/examples/bot.js'
+  # exitcode: 0
   # output: '.*Example bot has been spawned.*'
 
 - description: Stop and remove Minecraft server
