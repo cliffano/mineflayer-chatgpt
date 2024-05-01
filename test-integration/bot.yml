@@ -1,0 +1,22 @@
+---
+- params:
+    base: ../../../../..
+
+- description: Start Minecraft server using Docker Compose
+  command: 'make -f {base}/test-integration/fixtures/Makefile start-minecraft-server'
+  exitcode: 0
+
+- description: Set up example bot environment
+  command: 'cd {base}/examples/ && ./setup.sh'
+  exitcode: 0
+  output: 'added .* package.*'
+
+- description: Run example bot
+  command: 'node {base}/examples/bot.js'
+  exitcode: 0
+  # output: '.*Example bot has been spawned.*'
+
+- description: Stop and remove Minecraft server
+  command: 'make -f {base}/test-integration/fixtures/Makefile stop-minecraft-server'
+  exitcode: 0
+  output: 'docker rm.*'
