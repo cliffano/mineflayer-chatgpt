@@ -2,7 +2,7 @@
 - params:
     base: ../../../../..
 
-- description: Start Minecraft server using Docker Compose
+- description: Start Minecraft server via container using Docker Compose
   command: 'make -f {base}/test-integration/fixtures/Makefile start-minecraft-server'
   exitcode: 0
 
@@ -11,12 +11,21 @@
   exitcode: 0
   output: 'added .* package.*'
 
-- description: Run example bot
-  command: 'HOST=$(make -f {base}/test-integration/fixtures/Makefile get-minecraft-server-ip-address) node {base}/examples/bot.js'
-  # exitcode: 0
-  # output: '.*Example bot has been spawned.*'
+- description: Allow Minecraft server to start
+  command: 'sleep 120'
+  exitcode: 0
 
-- description: Stop and remove Minecraft server
+- description: Run example bot, check the bot is spawned
+  command: 'HOST=$(make -f {base}/test-integration/fixtures/Makefile get-minecraft-server-ip-address) node {base}/examples/bot.js'
+  exitcode: 123
+  output: '.*Example bot has been spawned.*'
+
+- description: Run example bot, check for OpenAI error due to lack of API key
+  command: 'HOST=$(make -f {base}/test-integration/fixtures/Makefile get-minecraft-server-ip-address) node {base}/examples/bot.js'
+  exitcode: 123
+  output: '.*An OpenAI error has occurred.*'
+
+- description: Stop Minecraft server and remove container
   command: 'make -f {base}/test-integration/fixtures/Makefile stop-minecraft-server'
   exitcode: 0
   output: 'docker rm.*'

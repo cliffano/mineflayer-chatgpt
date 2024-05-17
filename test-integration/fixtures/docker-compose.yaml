@@ -9,4 +9,5 @@ services:
     environment:
       EULA: 'TRUE'
       TYPE: 'VANILLA'
-      VERSION: '1.20.1'
+      VERSION: '1.20.2'
+      ONLINE_MODE: 'FALSE'

@@ -13,6 +13,7 @@ const bot = mineflayer.createBot({
 });
 bot.on('kicked', console.log);
 bot.on('error', console.error);
+bot.once('end', console.log);
 
 console.log('Loading Mineflayer ChatGPT plugin...')
 bot.loadPlugin(mineflayerChatgpt.chatgpt);
@@ -22,11 +23,8 @@ bot.once('spawn', () => {
   bot.chatgpt.setConfig('sk-someinexistingapikey');
   bot.chatgpt.sendMessage('otherplayer', 'Hello');
   console.log('Example bot has been spawned');
-  // hasSpawned = true;
+  console.log('Allow 10 seconds for OpenAI error to occur...');
+  setTimeout(() => {
+    process.exit(123);
+  }, 10000);
 });
-
-// while (!hasSpawned) {
-//   console.log('Waiting for example bot to spawn...');
-//   sleep(1000);
-// }
-
