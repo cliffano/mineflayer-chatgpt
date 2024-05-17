@@ -10,7 +10,7 @@
 Mineflayer ChatGPT
 ------------------
 
-Mineflayer ChatGPT is a [Mineflayer](https://github.com/PrismarineJS/mineflayer) plugin for sending a message to OpenAI's [ChatGPT](https://chat.openai.com/).
+Mineflayer ChatGPT is a [Mineflayer](https://github.com/PrismarineJS/mineflayer) plugin for sending messages to OpenAI's [ChatGPT](https://chat.openai.com/).
 
 Installation
 ------------
@@ -43,7 +43,7 @@ Set the configuration:
 
 Send a message to ChatGPT:
 
-    bot.chatgpt.sendMessage('player', 'Hello, could you please tell me how to make a diamond sword in Minecraft?');
+    bot.chatgpt.sendMessage('player', 'How to craft a diamond sword in Minecraft?');
 
 Colophon
 --------
