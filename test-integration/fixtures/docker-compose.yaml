@@ -2,7 +2,7 @@
 version: '3.8'
 services:
   minecraft_server:
-    image: itzg/minecraft-server:2024.4.1-java21-alpine
+    image: itzg/minecraft-server:2024.5.0-java21-alpine
     network_mode: bridge
     ports:
       - '25565:25565'
