@@ -24,7 +24,7 @@
     "test": "./test"
   },
   "dependencies": {
-    "mineflayer": "^4.20.1",
+    "mineflayer": "^4.23.0",
     "openai": "^4.47.1"
   },
   "devDependencies": {
