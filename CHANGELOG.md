@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change integration test to run Minecraft server in offline mode
 - Switch release workflow to use release-action
 - Upgrade mineflayer to 4.23.0
+- Update ESLint config to eslint.config.js
 
 ### Fixed
 - Fix intermittent integration test failure due to Minecraft server startup time
